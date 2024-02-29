@@ -1,0 +1,32 @@
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title  text-center>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21" class=master>
+    <ion-list *ngFor="let menuItem of menus" >
+      <ion-item menuClose="" on-click="goToMenu(menuItem)">
+       <ion-icon [name]="menuItem.icon"> {{menuItem.title}}</ion-icon> 
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label text-center>Account</ion-label>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToLogin()" id="menu-list-item18">
+        <ion-icon name="log-in"> Login</ion-icon>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToProfile()" id="menu-list-item20">
+        <ion-icon name="contact"> Profile</ion-icon>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="logout()" id="menu-list-item3">
+       <ion-icon name="log-out"> LogOut</ion-icon>  
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>
