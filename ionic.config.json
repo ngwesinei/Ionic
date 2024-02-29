@@ -1,0 +1,7 @@
+{
+  "name": "espenseApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
