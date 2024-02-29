@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Sale Detail
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  id="page3">
+  <ion-list id="expenseDetail-list3">
+    <ion-item color="none" id="expenseDetail-list-item10">
+      <ion-label>Date   :</ion-label>
+      <ion-label text-right>{{sale.date|date:"dd MMM yy"}}</ion-label>
+    </ion-item>
+    <ion-item color="none" id="expenseDetail-list-item11">
+        <ion-label>Product:</ion-label>
+        <ion-label text-right>{{sale.productname}}</ion-label>
+    </ion-item>
+    <ion-item color="none" id="expenseDetail-list-item12">
+        <ion-label>Qty    :</ion-label>
+        <ion-label text-right>{{sale.qty}}</ion-label>
+     </ion-item>
+    <ion-item color="none" id="expenseDetail-list-item16">
+        <ion-label>Amount :</ion-label>
+        <ion-label text-right>{{sale.amount}}</ion-label>    
+    </ion-item>
+    <ion-item color="none" id="expenseDetail-list-item13">
+        <ion-label> Customer:</ion-label>
+        <ion-label text-right>{{sale.customer}}</ion-label>  
+    </ion-item>
+    <ion-item color="none" id="expenseDetail-list-item14">
+        <ion-label> Team   :</ion-label>
+        <ion-label text-right>{{sale.team}}</ion-label> 
+    </ion-item>
+    <ion-item color="none" id="expenseDetail-list-item15">
+        <ion-label> Branch :</ion-label>
+        <ion-label text-right>{{sale.branch}}</ion-label> 
+   </ion-item>
+  </ion-list>
+</ion-content>

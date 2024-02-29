@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Edit Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding >
+  <form >
+    <ion-item >
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-input type="email" placeholder="You are not logged in" [(ngModel)]="user.email" name="email" disabled></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label>
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder="You are not logged in" [(ngModel)]="user.name" name="name"></ion-input>
+    </ion-item>
+
+    <ion-card>
+      <img [src]="imgSrc" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+      <ion-card-content>
+          <h2>Profile Image</h2>
+          <ion-grid>
+            <ion-row>
+           <ion-col>
+                <button ion-button clear small color="positive">
+                  Photo Album
+                </button> 
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button color="primary" block (click)="updateProfile()">
+      Save
+    </button>   
+  </form>
+</ion-content>

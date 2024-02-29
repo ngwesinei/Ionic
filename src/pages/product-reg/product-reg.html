@@ -1,0 +1,36 @@
+<ion-header>
+        <ion-navbar>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>
+            ProductRegister
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
+      <ion-content padding id="productReg" style="background-color:#F8F8F8;">
+        <form id="productReg-form1" #submitProductForm="ngForm">
+          <ion-item>
+            <ion-label>
+            Name
+            </ion-label>
+            <ion-input type="string" [(ngModel)]="product.name" name="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+            Price
+            </ion-label>
+            <ion-input type="number" placeholder="" [(ngModel)]="product.price" name="price"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+            Target
+            </ion-label>
+            <ion-input type="number" placeholder="" [(ngModel)]="product.target" name="price"></ion-input>
+          </ion-item>
+          <button id="submitProduct-button1" ion-button color="positive" block type="submit"
+          (click)="onSubmit(submitProductForm)">
+          Submit
+          </button>
+        </form>
+      </ion-content>

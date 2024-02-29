@@ -1,0 +1,33 @@
+<ion-header>
+        <ion-navbar>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>
+            ProductList
+          </ion-title>
+          <ion-buttons end>
+            <button ion-button icon-only stable  (click)="goToProductRegister()">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+      <ion-content padding id="page2">
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+        <ion-list id="viewExpenses-list2">
+          <ion-item-sliding  *ngFor = "let productItem of product"> 
+             <ion-item color="none" (click)="goToProductEdit(productItem)"> 
+                    <h3 class="h4">Product:{{productItem.name}} </h3> 
+                    <p class="p"> price:  ${{productItem.price}} </p> 
+                    <p class="p"> target: ${{productItem.target}} </p> 
+            </ion-item>    
+          <ion-item-options side="right"> 
+              <button ion-button color="danger"(click)="productItem(Item)"> 
+              <ion-icon name="trash"></ion-icon> 
+              </button> 
+             </ion-item-options>           
+           </ion-item-sliding>    
+          
+        </ion-list>
+      </ion-content>

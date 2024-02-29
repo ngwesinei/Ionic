@@ -1,0 +1,92 @@
+<ion-header>
+        <ion-navbar>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>
+            EditSales
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
+      <ion-content padding id="page1" style="background-color:#F8F8F8;">
+        <form id="increaseSales-form1" #submitExpenseForm="ngForm">
+            <ion-item id="increaseSales-input5">
+                <ion-label>
+                  Date
+                </ion-label>
+                <ion-datetime type="date" displayFormat="DD MMM YYYY" placeholder="" [(ngModel)]="sale.date" name="date"></ion-datetime>
+              </ion-item>
+          <ion-item id="increaseSales-select1">
+            <ion-label>
+              Product
+            </ion-label>
+            <ion-select [(ngModel)]="sale.product" name="product"  (ionChange)="prodPrice(sale.product)">
+              <ion-option *ngFor="let product of products" [value]="product">
+                {{product.name}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item >
+            <ion-label>
+              Price
+            </ion-label>
+            <ion-input type="number" placeholder=""  [(ngModel)]="price" name="priceAmt"  #priceAmt="ngModel" required text-right></ion-input>
+          </ion-item>
+          <ion-item id="increaseSales-input1">
+            <ion-label>
+              OrderQty
+            </ion-label>
+            <ion-input type="number" placeholder="" [(ngModel)]="sale.qty" name="qty"  #qty="ngModel" required text-right></ion-input>
+          </ion-item>
+          <ion-item id="increaseSales-input1">
+            <ion-label>
+              OrderAmt
+            </ion-label>
+            <ion-input type="number" placeholder=""  [(ngModel)]="sale.qty*price" name="amount"  #amount="ngModel" required text-right></ion-input>
+          </ion-item>
+          <ion-item id="increaseSales-select5">
+            <ion-label>
+              Customer
+            </ion-label>
+            <ion-select [(ngModel)]="sale.customer" name="customer">
+              <ion-option *ngFor="let customer of customers" [value]="customer">
+                {{customer}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item id="increaseSales-select4">
+            <ion-label>
+              SalesTeam
+            </ion-label>
+            <ion-select [(ngModel)]="sale.team" name="saleteam">
+              <ion-option *ngFor="let team of teams" [value]="team">
+                {{team}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item id="increaseSales-input3">
+            <ion-label>
+              Branch
+            </ion-label>
+            <ion-select [(ngModel)]="sale.branch" name="branch">
+              <ion-option *ngFor="let branch of branches" [value]="branch">
+                {{branch}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item id="increaseSales-select2">
+            <ion-label>
+              SalesMan
+            </ion-label>
+            <ion-label text-right>
+              {{saleMan}}
+            </ion-label>
+          </ion-item>
+        </form>
+        <button id="increaseSales-button1" ion-button color="positive" block type="submit" (click)="onSubmit(submitExpenseForm)">
+          Submit
+        </button>
+      </ion-content>
+      
+      
+      

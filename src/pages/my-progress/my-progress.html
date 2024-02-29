@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      MyProgress
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only stable  (click)="goToRegister()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content  id="page2">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list id="myProgress-list4">
+    <ion-item-sliding  *ngFor = "let saleItem of saleData" class="background">
+      <ion-item  id="myProgress-list-item7" (click)="goToSaleDetail(saleItem)">
+          
+              <h3 class="heading">{{saleItem.date|date:"dd MMM yy"}}</h3>
+          
+              <p class="body">Product: {{saleItem.product.name}}</p> 
+              <p class="body2">Amount : ${{saleItem.amount}}</p>
+              <p class="body2">Customer: {{saleItem.customer}}</p> 
+        
+        
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="positive" (click)="goToSaleEdit(saleItem)">
+          Edit
+        </button>
+        <button ion-button color="danger" (click)="deleteItem(saleItem)">
+          Delete
+        </button>
+     </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

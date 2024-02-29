@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      BySaleMan
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content id="page4">
+  <ion-list id="bySaleMan-list5" *ngFor="let result of results" no-padding>
+    <ion-item color="positive" id="bySaleMan-list-item13" no-padding>
+      <ion-avatar item-left>
+        <img [src]="result.profile" />
+      </ion-avatar>
+      <h3 class="h5">
+        Name  :{{result.title}}
+      </h3>
+      <p class="p">Contact :{{result.Email}}</p>
+      <p class="p">
+        Order :${{result.totamount}} 
+      </p>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>

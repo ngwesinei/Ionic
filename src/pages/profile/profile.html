@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Profile
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button solid (click)="goToEditProfile()">
+        Edit
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page7">
+  <form id="profile-form4">
+    <ion-item id="profile-input9">
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-input type="email" placeholder="" [(ngModel)]="user.email" name="email" disabled></ion-input>
+    </ion-item>
+    <ion-item id="profile-input10">
+      <ion-label>
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder="" [(ngModel)]="user.name" name="name" disabled></ion-input>
+    </ion-item>
+  </form>
+  <img [src]="imgSrc" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" /> 
+  <button id="profile-button10" ion-button color="positive" block>
+    Save
+  </button>
+</ion-content>
